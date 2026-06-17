@@ -1,10 +1,10 @@
-
 /**
- * Escreva uma descrição da classe App aqui.
+ * Aplicação do Exercicio Transformação de Numeros
  * 
- * @author (seu nome)
- * @version (um número da versão ou uma data)
+ * @author Guilherme Pequeneza, Felipe Estima, Thierry Nadjarian, Igor Dias
+ * @version 17/06/2026
  */
+
 public class App
 {    
     public static void main(String[] args){
@@ -30,18 +30,18 @@ public class App
             int[] diff = op.acharOperacoes();
             System.out.print("Opercoes feitas pra chegar no alvo: ");
             for(int i=0; i<diff.length; i++){
-                System.out.print(diff[i]+" ");
+                if(diff[i] > 0) System.out.print("+" + diff[i]+" "); // Se é positivo deixa +{numero}
+                else System.out.print(diff[i]+" "); // Se é negativo ou 0 só printa o numero que ja estara no formato certo
             }
             System.out.println("");
             int[] arrayChegada = op.simular();
-            System.out.print("Array Chegada: ");
+            System.out.print("Array Chegada Após Operações na Inicial: ");
             for(int i = 0;i<arrayChegada.length;i++){
                 System.out.print(arrayChegada[i] + " ");
             }
             System.out.println("");
         }
-        else{System.out.println("\nNao tem como chegar no seu alvo pois o numero de argumentos dos arrays nao batem");}
-            
+        else System.out.println("\nNao tem como chegar no seu alvo pois o numero de argumentos dos arrays nao batem");
         
     }
 }
